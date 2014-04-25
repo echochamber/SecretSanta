@@ -59,4 +59,9 @@ class ListLoader
 	{
 		return $this->listEntries;
 	}
+
+	public function clearList()
+	{
+		$this->listEntries = array();
+	}
 }

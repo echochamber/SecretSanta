@@ -12,7 +12,7 @@ class FileLoaderTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @dataProvider validDataProvider
+	 * @dataProvider loadValidDataProvider
 	 */
 	public function testLoadValidData($testData)
 	{
@@ -26,7 +26,7 @@ class FileLoaderTest extends \PHPUnit_Framework_TestCase
 		$this->assertEquals(4, $numEntries);
 	}
 
-	public function validDataProvider()
+	public function loadValidDataProvider()
 	{
 		$dataSets = array();
 		$fixtures = glob(__DIR__ . '/Fixtures/valid_list_*.txt');
@@ -40,7 +40,7 @@ class FileLoaderTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @dataProvider invalidDataProvider
+	 * @dataProvider loadInvalidDataProvider
 	 * @expectedException \Echochamber\SecretSanta\ListLoaderException
 	 */
 	public function testLoadInvalidData($testData)
@@ -50,7 +50,7 @@ class FileLoaderTest extends \PHPUnit_Framework_TestCase
 		
 	}
 
-	public function invalidDataProvider()
+	public function loadInvalidDataProvider()
 	{
 		$dataSets = array();
 		$fixtures = glob(__DIR__ . '/Fixtures/invalid_list_*.txt');
